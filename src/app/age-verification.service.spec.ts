@@ -30,7 +30,7 @@ describe('AgeVerificationService', () => {
       inputs: { dob: new Date(1820, 0, 1), fromYear: 2018 },
       assert: false
     },
-    { it: 'should return true when the age older than 10 years from set year',
+    { fit: 'should return true when the age older than 10 years from set year',
       inputs: { dob: new Date(2004, 0, 1), fromYear: 2000 },
       assert: true
     },
@@ -42,8 +42,10 @@ describe('AgeVerificationService', () => {
       inputs: { dob: new Date(2010, 0, 1), fromYear: 2018 },
       assert: false
     }
-  ].forEach(tc => {
-    it(tc.it, () => {
+  ].forEach((tc: any) => {
+    const itDescribe = tc.fit || tc.it;
+    const itRunner = tc.fit ? fit : it;
+    itRunner(itDescribe, () => {
       expect(subject.canEnter(tc.inputs.dob, tc.inputs.fromYear)).toBe(tc.assert);
     });
   });
