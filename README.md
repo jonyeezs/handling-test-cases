@@ -18,6 +18,8 @@ This lesson is written with Angular and Jasmine Test framework but the principle
 
 Follow the commits one by one to see the progression in thought.
 
+The specific spec file you want to look at is [age-verification.service.spec.ts](/src/app/age-verification.service.spec.ts)
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
